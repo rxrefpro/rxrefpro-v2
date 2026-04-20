@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RxRefPro</title>
+
+<link rel="stylesheet" href="style.css?v=1">
+
+</head>
+
+<body>
+
+<header>RxRefPro 💊</header>
+
+<nav>
+  <button onclick="showTab('home')">Home</button>
+  <button onclick="showTab('drugs')">Drugs</button>
+  <button onclick="showTab('flash')">Flash</button>
+  <button onclick="showTab('quiz')">Quiz</button>
+  <button onclick="showTab('interactions')">Interactions</button>
+  <button onclick="showTab('antidotes')">Antidotes</button>
+</nav>
+
+<!-- HOME -->
+<div class="container" id="home">
+  <h2 id="greeting"></h2>
+  <div class="card">🔥 Streak: <span id="streak">0</span></div>
+  <div class="card">📊 Accuracy: <span id="accuracy">0</span>%</div>
+</div>
+
+<!-- DRUGS -->
+<div class="container" id="drugs" style="display:none">
+  <input class="search" placeholder="Search drug..." onkeyup="searchDrug(this.value)">
+  <div id="drugList"></div>
+</div>
+
+<!-- FLASH -->
+<div class="container" id="flash" style="display:none">
+  <div class="card" id="flashcard"></div>
+  <button onclick="nextFlash()">Next</button>
+</div>
+
+<!-- QUIZ -->
+<div class="container" id="quiz" style="display:none">
+  <div class="card" id="question"></div>
+  <button onclick="answer('a')">A</button>
+  <button onclick="answer('b')">B</button>
+</div>
+
+<!-- INTERACTIONS -->
+<div class="container" id="interactions" style="display:none">
+  <input class="search" id="int1" placeholder="Drug 1">
+  <input class="search" id="int2" placeholder="Drug 2">
+  <button onclick="checkInteraction()">Check</button>
+  <div id="interactionResult"></div>
+</div>
+
+<!-- ANTIDOTES -->
+<div class="container" id="antidotes" style="display:none">
+  <div id="antidoteList"></div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
